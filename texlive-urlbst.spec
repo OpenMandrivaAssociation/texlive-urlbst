@@ -60,9 +60,9 @@ is meant to be robust rather than pretty.
 %doc %{_texmfdistdir}/doc/bibtex/urlbst/urlbst.bib
 %doc %{_texmfdistdir}/doc/bibtex/urlbst/urlbst.html
 %doc %{_texmfdistdir}/doc/bibtex/urlbst/urlbst.html.in
-%doc %{_texmfdistdir}/doc/bibtex/urlbst/urlbst.in
 %doc %{_texmfdistdir}/doc/bibtex/urlbst/urlbst.pdf
 %doc %{_texmfdistdir}/doc/bibtex/urlbst/urlbst.tex
+%doc %{_texmfdistdir}/doc/bibtex/urlbst/urlbst.tex.in
 #- source
 %doc %{_texmfdistdir}/source/bibtex/urlbst/configure
 %doc %{_texmfdistdir}/source/bibtex/urlbst/configure.ac
