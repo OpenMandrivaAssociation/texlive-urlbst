@@ -19,9 +19,6 @@ BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
 Provides:	texlive-urlbst.bin = %{EVRD}
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
-Conflicts:	texlive-source <= 20110705-3
 
 %description
 Supports a new BibTeX 'webpage' entry type and 'url',
@@ -30,20 +27,12 @@ urlbst can be used to add this support to an arbitrary .bst
 file which has a reasonably conventional structure. The result
 is meant to be robust rather than pretty.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -66,7 +55,6 @@ is meant to be robust rather than pretty.
 #- source
 %doc %{_texmfdistdir}/source/bibtex/urlbst/configure
 %doc %{_texmfdistdir}/source/bibtex/urlbst/configure.ac
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -83,5 +71,3 @@ mkdir -p %{buildroot}%{_datadir}
 # remove bad "dependency" generation on @PERL@
 rm -f texmf-dist/doc/bibtex/urlbst/urlbst.in
 cp -fpar texmf-dist %{buildroot}%{_datadir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
