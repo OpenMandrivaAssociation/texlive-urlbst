@@ -1,12 +1,12 @@
-# revision 23262
+# revision 26313
 # category Package
 # catalog-ctan /biblio/bibtex/contrib/urlbst
-# catalog-date 2011-07-21 09:04:20 +0200
+# catalog-date 2011-11-15 11:50:22 +0100
 # catalog-license gpl
 # catalog-version 0.7
 Name:		texlive-urlbst
 Version:	0.7
-Release:	2
+Release:	3
 Summary:	Web support for BibTeX
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/biblio/bibtex/contrib/urlbst
@@ -67,7 +67,7 @@ mkdir -p %{buildroot}%{_bindir}
 pushd %{buildroot}%{_bindir}
     ln -sf %{_texmfdistdir}/scripts/urlbst/urlbst urlbst
 popd
-mkdir -p %{buildroot}%{_datadir}
 # remove bad "dependency" generation on @PERL@
 rm -f texmf-dist/doc/bibtex/urlbst/urlbst.in
+mkdir -p %{buildroot}%{_datadir}
 cp -fpar texmf-dist %{buildroot}%{_datadir}
