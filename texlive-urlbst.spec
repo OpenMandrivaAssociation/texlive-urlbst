@@ -71,3 +71,22 @@ popd
 rm -f texmf-dist/doc/bibtex/urlbst/urlbst.in
 mkdir -p %{buildroot}%{_datadir}
 cp -fpar texmf-dist %{buildroot}%{_datadir}
+
+
+%changelog
+* Thu Aug 09 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.7-3
++ Revision: 813161
+- Update to latest release.
+
+* Thu Jan 05 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.7-2
++ Revision: 757329
+- Rebuild to reduce used resources
+
+* Tue Nov 08 2011 Paulo Andrade <pcpa@mandriva.com.br> 0.7-1
++ Revision: 728842
+- texlive-urlbst
+- texlive-urlbst
+- texlive-urlbst
+- texlive-urlbst
+- texlive-urlbst
+
