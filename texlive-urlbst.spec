@@ -1,4 +1,4 @@
-# revision 26313
+# revision 29803
 # category Package
 # catalog-ctan /biblio/bibtex/contrib/urlbst
 # catalog-date 2011-11-15 11:50:22 +0100
@@ -6,7 +6,7 @@
 # catalog-version 0.7
 Name:		texlive-urlbst
 Version:	0.7
-Release:	3
+Release:	4
 Summary:	Web support for BibTeX
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/biblio/bibtex/contrib/urlbst
@@ -49,6 +49,7 @@ is meant to be robust rather than pretty.
 %doc %{_texmfdistdir}/doc/bibtex/urlbst/urlbst.bib
 %doc %{_texmfdistdir}/doc/bibtex/urlbst/urlbst.html
 %doc %{_texmfdistdir}/doc/bibtex/urlbst/urlbst.html.in
+%doc %{_texmfdistdir}/doc/bibtex/urlbst/urlbst.in
 %doc %{_texmfdistdir}/doc/bibtex/urlbst/urlbst.pdf
 %doc %{_texmfdistdir}/doc/bibtex/urlbst/urlbst.tex
 %doc %{_texmfdistdir}/doc/bibtex/urlbst/urlbst.tex.in
@@ -67,26 +68,5 @@ mkdir -p %{buildroot}%{_bindir}
 pushd %{buildroot}%{_bindir}
     ln -sf %{_texmfdistdir}/scripts/urlbst/urlbst urlbst
 popd
-# remove bad "dependency" generation on @PERL@
-rm -f texmf-dist/doc/bibtex/urlbst/urlbst.in
 mkdir -p %{buildroot}%{_datadir}
 cp -fpar texmf-dist %{buildroot}%{_datadir}
-
-
-%changelog
-* Thu Aug 09 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.7-3
-+ Revision: 813161
-- Update to latest release.
-
-* Thu Jan 05 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.7-2
-+ Revision: 757329
-- Rebuild to reduce used resources
-
-* Tue Nov 08 2011 Paulo Andrade <pcpa@mandriva.com.br> 0.7-1
-+ Revision: 728842
-- texlive-urlbst
-- texlive-urlbst
-- texlive-urlbst
-- texlive-urlbst
-- texlive-urlbst
-
