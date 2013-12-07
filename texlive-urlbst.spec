@@ -6,7 +6,7 @@
 # catalog-version 0.7
 Name:		texlive-urlbst
 Version:	0.7
-Release:	5
+Release:	6
 Summary:	Web support for BibTeX
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/biblio/bibtex/contrib/urlbst
