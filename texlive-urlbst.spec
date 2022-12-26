@@ -1,5 +1,5 @@
 Name:		texlive-urlbst
-Version:	55777
+Version:	65190
 Release:	1
 Summary:	Web support for BibTeX
 Group:		Publishing
