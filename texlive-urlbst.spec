@@ -1,6 +1,6 @@
 Name:		texlive-urlbst
 Version:	65190
-Release:	1
+Release:	2
 Summary:	Web support for BibTeX
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/biblio/bibtex/contrib/urlbst
