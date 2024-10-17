@@ -3,7 +3,7 @@ Version:	65694
 Release:	1
 Summary:	Web support for BibTeX
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/biblio/bibtex/contrib/urlbst
+URL:		https://www.ctan.org/tex-archive/biblio/bibtex/contrib/urlbst
 License:	GPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/urlbst.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/urlbst.doc.r%{version}.tar.xz
