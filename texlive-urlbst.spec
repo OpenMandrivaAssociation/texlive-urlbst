@@ -1,54 +1,26 @@
-Name:		texlive-urlbst
-Version:	65694
-Release:	1
+%global tl_name urlbst
+%global tl_revision 76790
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.9.1
+Release:	%{tl_revision}.1
 Summary:	Web support for BibTeX
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/biblio/bibtex/contrib/urlbst
-License:	GPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/urlbst.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/urlbst.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/urlbst.source.r%{version}.tar.xz
+License:	gpl2 lppl
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/urlbst.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/urlbst.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/urlbst.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
-Provides:	texlive-urlbst.bin = %{EVRD}
+BuildSystem:	texlive
+Requires:	texlive(urlbst.bin)
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-Supports a new BibTeX 'webpage' entry type and 'url',
-'lastchecked', and 'eprint' and 'DOI' fields. The Perl script
-urlbst can be used to add this support to an arbitrary .bst
-file which has a reasonably conventional structure. The result
-is meant to be robust rather than pretty.
+Supports a new BibTeX 'webpage' entry type and 'url', 'lastchecked', and
+'eprint' and 'DOI' fields. The Perl script urlbst can be used to add
+this support to an arbitrary .bst file which has a reasonably
+conventional structure. The result is meant to be robust rather than
+pretty.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_bindir}/urlbst
-%{_texmfdistdir}/bibtex/bst/urlbst
-%{_texmfdistdir}/scripts/urlbst
-%doc %{_texmfdistdir}/doc/bibtex/urlbst
-#- source
-%doc %{_texmfdistdir}/source/bibtex/urlbst
-
-#-----------------------------------------------------------------------
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_bindir}
-pushd %{buildroot}%{_bindir}
-ln -sf %{_texmfdistdir}/scripts/urlbst/urlbst urlbst
-popd
-mkdir -p %{buildroot}%{_datadir}
-cp -fpar texmf-dist %{buildroot}%{_datadir}
